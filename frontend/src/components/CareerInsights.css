@@ -1,0 +1,349 @@
+/* Premium CareerPilot career insights */
+
+.career-insights {
+    position: relative;
+    padding: 115px 7%;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.career-insights::before {
+    content: "";
+    position: absolute;
+    top: -180px;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #dbeafe;
+    opacity: .28;
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+/* Header */
+
+.insights-header {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+    margin: 0 auto 58px;
+    text-align: center;
+}
+
+.insights-header > span {
+    color: #2563eb;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 2px;
+}
+
+.insights-header h2 {
+    margin: 13px 0 16px;
+    color: #111827;
+    font-size: clamp(38px, 4vw, 52px);
+    line-height: 1.04;
+    letter-spacing: -2.4px;
+}
+
+.insights-header h2 strong {
+    color: #2563eb;
+}
+
+.insights-header p {
+    max-width: 550px;
+    margin: auto;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Insight cards */
+
+.insights-grid {
+    position: relative;
+    z-index: 1;
+    max-width: 1080px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.insight-box {
+    position: relative;
+    padding: 27px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .92);
+    box-shadow: 0 14px 40px rgba(15, 23, 42, .045);
+    transition:
+        transform .28s ease,
+        border-color .28s ease,
+        box-shadow .28s ease;
+}
+
+.insight-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 25px;
+    right: 25px;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #2563eb,
+        transparent
+    );
+    opacity: 0;
+    transition: .28s ease;
+}
+
+.insight-box:hover {
+    transform: translateY(-6px);
+    border-color: #bfdbfe;
+    box-shadow: 0 22px 50px rgba(37, 99, 235, .09);
+}
+
+.insight-box:hover::after {
+    opacity: 1;
+}
+
+/* Top */
+
+.insight-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.insight-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #dbeafe;
+    border-radius: 11px;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.insight-top > strong {
+    color: #111827;
+    font-size: 25px;
+    font-weight: 750;
+    letter-spacing: -1px;
+}
+
+/* Content */
+
+.insight-box > span {
+    color: #94a3b8;
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 1.5px;
+}
+
+.insight-box h3 {
+    margin: 9px 0 9px;
+    color: #111827;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -.4px;
+}
+
+.insight-box p {
+    min-height: 50px;
+    margin: 0;
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* Progress */
+
+.insight-progress {
+    height: 5px;
+    margin-top: 23px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e8eef7;
+}
+
+.insight-progress-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #6366f1
+    );
+    transition: width .8s ease;
+}
+
+.insight-box:hover .insight-progress-fill {
+    filter: brightness(1.05);
+}
+
+.insight-progress-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    color: #94a3b8;
+    font-size: 8px;
+}
+
+.insight-progress-label b {
+    color: #2563eb;
+    font-weight: 700;
+}
+
+/* AI direction */
+
+.insights-bottom {
+    position: relative;
+    z-index: 1;
+    max-width: 1080px;
+    margin: 20px auto 0;
+    padding: 21px 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border: 1px solid #dbeafe;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .95);
+    box-shadow: 0 12px 35px rgba(15, 23, 42, .035);
+}
+
+.direction {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.direction-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border: 1px solid #dbeafe;
+    border-radius: 10px;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.direction span {
+    color: #2563eb;
+    font-size: 8px;
+    font-weight: 750;
+    letter-spacing: 1.3px;
+}
+
+.direction h3 {
+    margin: 4px 0 0;
+    color: #1e293b;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+/* CTA */
+
+.insights-bottom > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 11px 15px;
+    flex-shrink: 0;
+    border: 1px solid #111827;
+    border-radius: 9px;
+    background: #111827;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 650;
+    text-decoration: none;
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.insights-bottom > a:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, .18);
+}
+
+/* Tablet */
+
+@media (max-width: 850px) {
+
+    .career-insights {
+        padding: 90px 6%;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .insight-box p {
+        min-height: auto;
+    }
+
+    .insights-bottom {
+        max-width: 600px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 550px) {
+
+    .career-insights {
+        padding: 75px 5%;
+    }
+
+    .insights-header {
+        margin-bottom: 40px;
+    }
+
+    .insights-header h2 {
+        font-size: 36px;
+        letter-spacing: -1.7px;
+    }
+
+    .insights-header p {
+        font-size: 13px;
+    }
+
+    .insight-box {
+        padding: 23px;
+    }
+
+    .insights-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .direction {
+        align-items: flex-start;
+    }
+
+    .direction h3 {
+        line-height: 1.5;
+    }
+
+    .insights-bottom > a {
+        width: 100%;
+        justify-content: center;
+    }
+}

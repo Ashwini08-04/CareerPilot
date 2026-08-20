@@ -1,0 +1,578 @@
+/* CareerPilot Dashboard */
+
+.dashboard {
+    min-height: 100vh;
+    display: flex;
+    background: #f7f9fc;
+    color: #111827;
+}
+
+.dashboard-sidebar {
+    width: 230px;
+    min-height: 100vh;
+    padding: 28px 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-right: 1px solid #e8edf3;
+}
+
+.dashboard-logo {
+    padding: 0 12px;
+    margin-bottom: 42px;
+    color: #111827;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 750;
+    letter-spacing: -0.7px;
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sidebar-section > span {
+    padding: 0 12px;
+    margin-bottom: 9px;
+    color: #a0a9b7;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.sidebar-section a,
+.sidebar-bottom a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 9px;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.sidebar-section a:hover,
+.sidebar-bottom a:hover {
+    background: #f7faff;
+    color: #2563eb;
+}
+
+.sidebar-section a.active {
+    background: #eff6ff;
+    color: #2563eb;
+    font-weight: 650;
+}
+
+.sidebar-section a.active::before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    width: 3px;
+    height: 19px;
+    border-radius: 0 4px 4px 0;
+    background: #2563eb;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+/* Main */
+
+.dashboard-main {
+    flex: 1;
+    min-width: 0;
+    padding: 38px 46px 50px;
+}
+
+/* Header */
+
+.dashboard-topbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.dashboard-label {
+    display: inline-block;
+    color: #2563eb;
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 1.6px;
+}
+
+.dashboard-topbar h1 {
+    margin: 8px 0 5px;
+    color: #111827;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 750;
+    letter-spacing: -1.1px;
+}
+
+.dashboard-topbar p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* Loading / messages */
+
+.dashboard-message {
+    padding: 18px 20px;
+    border: 1px solid #e5eaf0;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* Top statistics */
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.dashboard-card {
+    position: relative;
+    min-height: 112px;
+    padding: 19px 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #e4eaf1;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.025);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55px;
+    height: 55px;
+    border-radius: 0 0 0 55px;
+    background: #f4f8ff;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+.dashboard-card span {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin-bottom: 13px;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.dashboard-card strong {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    color: #111827;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 750;
+    letter-spacing: -0.8px;
+}
+
+.dashboard-card small {
+    position: relative;
+    z-index: 1;
+    margin-left: 5px;
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+/* Lower section */
+
+.dashboard-lower {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.progress-card,
+.insight-card {
+    min-height: 175px;
+    padding: 23px;
+    box-sizing: border-box;
+    border: 1px solid #e4eaf1;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.025);
+}
+
+/* Progress */
+
+.card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.card-heading span,
+.insight-card > span,
+.target-role span,
+.applications-dashboard-card span {
+    color: #2563eb;
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 1.3px;
+}
+
+.card-heading h2,
+.insight-card h2,
+.target-role h2,
+.applications-dashboard-card h2 {
+    margin: 7px 0 0;
+    color: #111827;
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 680;
+    letter-spacing: -0.35px;
+}
+
+.card-heading strong {
+    color: #2563eb;
+    font-size: 19px;
+    font-weight: 750;
+}
+
+.progress-bar {
+    height: 7px;
+    margin-top: 28px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #edf2f7;
+}
+
+.progress-bar div {
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #2563eb, #4f7ff2);
+    box-shadow: 0 2px 7px rgba(37, 99, 235, 0.2);
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 11px;
+}
+
+.progress-steps span {
+    color: #9aa5b4;
+    font-size: 9px;
+    font-weight: 500;
+}
+
+/* AI Insight */
+
+.insight-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.insight-card::after {
+    content: "✦";
+    position: absolute;
+    right: 20px;
+    bottom: -10px;
+    color: #eef4ff;
+    font-size: 80px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.insight-card h2 {
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.insight-card p {
+    position: relative;
+    z-index: 1;
+    max-width: 330px;
+    margin: 15px 0 16px;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.insight-card a {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.insight-card a:hover {
+    color: #1d4ed8;
+}
+
+/* Target Role */
+
+.target-role {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 14px;
+    padding: 22px 24px;
+    border: 1px solid #e4eaf1;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.025);
+}
+
+.target-role h2 {
+    margin-top: 8px;
+}
+
+.target-role p {
+    margin: 6px 0 0;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.role-match {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 82px;
+    height: 68px;
+    border-left: 1px solid #edf0f4;
+}
+
+.role-match strong {
+    color: #2563eb;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 750;
+}
+
+.role-match span {
+    margin-top: 5px;
+    color: #94a3b8;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+/* Application / AI cards */
+
+.applications-dashboard-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 14px;
+    padding: 22px 24px;
+    border: 1px solid #e4eaf1;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.025);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.applications-dashboard-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.055);
+}
+
+.applications-dashboard-card h2 {
+    margin-top: 7px;
+}
+
+.applications-dashboard-card p {
+    margin: 6px 0 0;
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.applications-dashboard-card a {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 125px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border: 1px solid #dbe4ef;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 650;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.applications-dashboard-card a:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+/* AI career tool */
+
+.applications-dashboard-card:nth-of-type(2) {
+    background: linear-gradient(145deg, #ffffff, #f8fbff);
+}
+
+.applications-dashboard-card:nth-of-type(2) a {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 5px 14px rgba(37, 99, 235, 0.16);
+}
+
+.applications-dashboard-card:nth-of-type(2) a:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+    .dashboard-main {
+        padding: 35px 32px 45px;
+    }
+
+    .dashboard-sidebar {
+        width: 210px;
+    }
+
+    .dashboard-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .dashboard-lower {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-card,
+    .insight-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .dashboard-sidebar {
+        display: none;
+    }
+
+    .dashboard-main {
+        padding: 30px 22px 40px;
+    }
+
+    .dashboard-topbar h1 {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-main {
+        padding: 25px 16px 35px;
+    }
+
+    .dashboard-content {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .dashboard-card {
+        min-height: 100px;
+    }
+
+    .dashboard-topbar {
+        margin-bottom: 24px;
+    }
+
+    .dashboard-topbar h1 {
+        font-size: 24px;
+        letter-spacing: -0.7px;
+    }
+
+    .dashboard-topbar p {
+        font-size: 12px;
+    }
+
+    .progress-card,
+    .insight-card,
+    .target-role,
+    .applications-dashboard-card {
+        padding: 19px;
+    }
+
+    .target-role {
+        align-items: flex-start;
+    }
+
+    .role-match {
+        min-width: 68px;
+    }
+
+    .applications-dashboard-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .applications-dashboard-card a {
+        width: 100%;
+    }
+
+    .progress-steps span {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 420px) {
+    .dashboard-topbar h1 {
+        font-size: 22px;
+    }
+
+    .dashboard-card strong {
+        font-size: 25px;
+    }
+
+    .target-role {
+        gap: 12px;
+    }
+
+    .role-match {
+        min-width: 60px;
+        height: 60px;
+    }
+
+    .role-match strong {
+        font-size: 21px;
+    }
+}
