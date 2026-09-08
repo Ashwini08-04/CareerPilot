@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Sparkles, ArrowUp } from "lucide-react";
 import "./AIInsights.css";
 
-const API_URL = "http://localhost:5000/api/ai/assistant";
+const API_URL = "https://careerpilot-n4ys.onrender.com/api/ai/assistant";
 
 function AIInsights() {
     const [question, setQuestion] = useState("");

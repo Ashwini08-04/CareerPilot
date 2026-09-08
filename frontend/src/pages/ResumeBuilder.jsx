@@ -3,7 +3,7 @@ import "./ResumeBuilder.css";
 import html2pdf from "html2pdf.js";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/resume-builder";
+const API_URL = "https://careerpilot-n4ys.onrender.com/api/resume-builder";
 
 function ResumeBuilder() {
     const [template, setTemplate] = useState("classic");

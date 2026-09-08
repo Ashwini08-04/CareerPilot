@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Analytics.css";
 
-const API_URL = "http://localhost:5000/api/jobs/analytics";
+const API_URL = "https://careerpilot-n4ys.onrender.com/api/jobs/analytics";
 
 function Analytics() {
     const [analytics, setAnalytics] = useState(null);

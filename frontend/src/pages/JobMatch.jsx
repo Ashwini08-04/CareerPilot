@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./JobMatch.css";
 
-const API_URL = "http://localhost:5000/api/job-match";
+const API_URL = "https://careerpilot-n4ys.onrender.com/api/job-match";
 
 function JobMatch() {
     const [jobDescription, setJobDescription] = useState("");

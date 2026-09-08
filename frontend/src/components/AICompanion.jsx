@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import "./AICompanion.css";
 
-const API_URL = "http://localhost:5000/api/ai/assistant";
+const API_URL = "https://careerpilot-n4ys.onrender.com/api/ai/assistant";
 
 function AIAssistant() {
     const [question, setQuestion] = useState("");

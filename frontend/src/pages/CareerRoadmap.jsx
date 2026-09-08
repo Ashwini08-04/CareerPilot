@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./CareerRoadmap.css";
 
-const API_URL = "http://localhost:5000/api/career-roadmap";
+const API_URL = "https://careerpilot-n4ys.onrender.com/api/career-roadmap";
 
 function CareerRoadmap() {
     const [targetRole, setTargetRole] = useState("");

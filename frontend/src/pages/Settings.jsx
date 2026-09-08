@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import "./Settings.css";
 
-const API_URL = "http://localhost:5000/api/auth";
+const API_URL = "https://careerpilot-n4ys.onrender.com/api/auth";
 
 function Settings() {
     const [profile, setProfile] = useState({
